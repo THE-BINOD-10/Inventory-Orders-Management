@@ -1,0 +1,267 @@
+{
+    "info": {
+        "name": "FZTPL Inventory & Orders API",
+        "_postman_id": "fztpl-inventory-api",
+        "description": "Complete Postman collection for Inventory and Orders management system",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Item",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Wireless Mouse\",\n    \"description\": \"Ergonomic wireless mouse with USB receiver\",\n    \"price\": 1499.0,\n    \"quantity\": 25\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/items",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "items"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "List Items",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/items?page=1&page_size=10",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "items"
+                    ],
+                    "query": [
+                        {
+                            "key": "page",
+                            "value": "1"
+                        },
+                        {
+                            "key": "page_size",
+                            "value": "10"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Item by ID",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/items/1",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "items",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Item",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Wireless Mouse Updated\",\n    \"price\": 1599.0,\n    \"quantity\": 30\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/items/1",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "items",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Soft Delete Item",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/items/1",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "items",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Order",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"customer_name\": \"John Doe\",\n  \"items\": [\n    {\"item_id\": 1, \"quantity\": 3},\n    {\"item_id\": 2, \"quantity\": 1}\n  ]\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/orders",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "orders"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Order by ID",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/orders/1",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "orders",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "List Orders",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/orders?page=1&page_size=10",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "orders"
+                    ],
+                    "query": [
+                        {
+                            "key": "page",
+                            "value": "1"
+                        },
+                        {
+                            "key": "page_size",
+                            "value": "10"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Cancel Order",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "X-API-KEY",
+                        "value": "mysecretkey"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/orders/1/cancel",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "orders",
+                        "1",
+                        "cancel"
+                    ]
+                }
+            }
+        }
+    ]
+}

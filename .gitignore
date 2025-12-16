@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyd
+*.pyo
+*.env
+*.env.* 
+*.venv
+venv/
+ENV/
+env/
+.venv/
+
+# PostgreSQL / Database
+*.sqlite3
+*.db
+*.log
+
+# Alembic / Migrations
+migrations/versions/*.pyc
+migrations/versions/__pycache__/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Pytest
+.cache
+.pytest_cache/
+htmlcov/
+
+# Coverage
+.coverage
+.coverage.*
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
