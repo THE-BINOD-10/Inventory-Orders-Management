@@ -64,7 +64,7 @@ def list_orders(
     }
 
 
-# CANCEL ORDER (OPTIONAL BUT BONUS)
+# CANCEL ORDER (OPTIONAL)
 @router.post("/{order_id}/cancel")
 def cancel_order(order_id: int, db: Session = Depends(get_db)):
     order = db.query(Order).filter(Order.id == order_id).first()
